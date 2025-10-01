@@ -1,0 +1,332 @@
+/* Variabel Warna Tema Gelap */
+:root {
+    --bg-color: #121212;
+    --primary-surface: #1e1e1e;
+    --secondary-surface: #2c2c2c;
+    --primary-text: #e0e0e0;
+    --secondary-text: #b0b0b0;
+    --accent-color: #03dac6;
+    --border-color: #3a3a3a;
+}
+
+/* Reset dan Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Fallback color */
+    background-image: linear-gradient(180deg, #1e1e1e 0%, #121212 100%);
+    color: var(--primary-text);
+    line-height: 1.6;
+}
+
+/* Container Utama */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Header dan Navigasi */
+header {
+    background-color: var(--primary-surface);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Tambahan agar vertikal rapi */
+}
+
+/* Mengatur semua link di dalam navigasi */
+nav ul li a {
+    color: var(--primary-text); /* Mengatasi link warna biru */
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: block;
+}
+
+nav ul li a:hover, .nav-active {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Grid Berita di Halaman Home */
+.berita-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.berita-card {
+    background-color: var(--primary-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.berita-card:hover {
+    transform: translateY(-5px);
+}
+
+.berita-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.berita-card-content {
+    padding: 15px;
+}
+
+.berita-card-content h3 {
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.berita-card-content p {
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.berita-card-content .baca-selengkapnya {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Halaman Artikel Detail */
+.artikel-container img {
+    display: block;         
+    width: 100%;          
+    max-width: 750px;   
+    height: auto;         
+    margin: 1.5rem auto;    
+    border-radius: 8px;   
+}
+.artikel-container h1 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+.artikel-container .info {
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+.artikel-container .konten {
+    white-space: pre-wrap; /* Agar format teks dari database tetap rapi */
+}
+
+
+/* Form Styling */
+.form-container {
+    background-color: var(--primary-surface);
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-grup {
+    margin-bottom: 15px;
+}
+
+.form-grup label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--secondary-text);
+}
+
+.form-grup input,
+.form-grup textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--secondary-surface);
+    color: var(--primary-text);
+    font-size: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #04b8a6;
+}
+
+/* Tabel CRUD */
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.crud-table th, .crud-table td {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.crud-table thead {
+    background-color: var(--secondary-surface);
+}
+
+.crud-table .action-links a {
+    margin-right: 10px;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+.crud-table .action-links .hapus {
+    color: #ff6b6b;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    color: var(--secondary-text);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+/* Styling Dropdown Kategori */
+.dropdown {
+    position: relative; 
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-surface);
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.dropdown-content a {
+    color: var(--primary-text);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--secondary-surface);
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a.dropdown-item-special {
+    background-color: var(--secondary-surface);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: bold;
+}
+/* Style untuk Hero Section di Home */
+.hero-section {
+    height: 50vh; /* Tinggi 50% dari viewport */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Lapisan gelap agar teks terbaca */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hero-overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Style untuk judul section di Home */
+.home-section {
+    margin-bottom: 2.5rem;
+}
+
+.home-section h2 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
